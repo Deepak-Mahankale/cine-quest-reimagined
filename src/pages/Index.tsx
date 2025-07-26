@@ -4,16 +4,18 @@ import { CategoryBadges } from "@/components/CategoryBadges";
 import { AlertBanner } from "@/components/AlertBanner";
 import { HeroSection } from "@/components/HeroSection";
 import { MovieGrid } from "@/components/MovieGrid";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
       <ActionButtons />
       <CategoryBadges />
       <AlertBanner />
       <HeroSection />
       <MovieGrid />
+      <Footer />
     </div>
   );
 };
