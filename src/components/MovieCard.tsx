@@ -2,8 +2,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Download, Play, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface MovieCardProps {
+  id?: string;
   title: string;
   year: string;
   rating: number;
@@ -13,9 +15,15 @@ interface MovieCardProps {
   description: string;
 }
 
-export const MovieCard = ({ title, year, rating, quality, genres, imageUrl, description }: MovieCardProps) => {
+export const MovieCard = ({ id = "1", title, year, rating, quality, genres, imageUrl, description }: MovieCardProps) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/movie/${id}`);
+  };
+
   return (
-    <Card className="movie-card gradient-card border-border group overflow-hidden">
+    <Card className="movie-card gradient-card border-border group overflow-hidden cursor-pointer transition-transform hover:scale-105" onClick={handleCardClick}>
       <div className="relative">
         <img 
           src={imageUrl} 
@@ -38,10 +46,25 @@ export const MovieCard = ({ title, year, rating, quality, genres, imageUrl, desc
         {/* Hover Overlay */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="flex space-x-2">
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button 
+              size="sm" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={(e) => {
+                e.stopPropagation();
+                // Handle play action
+              }}
+            >
               <Play className="h-4 w-4" />
             </Button>
-            <Button size="sm" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-black"
+              onClick={(e) => {
+                e.stopPropagation();
+                // Handle download action
+              }}
+            >
               <Download className="h-4 w-4" />
             </Button>
           </div>
