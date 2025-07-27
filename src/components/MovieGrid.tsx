@@ -3,6 +3,7 @@ import { MovieCard } from "./MovieCard";
 export const MovieGrid = () => {
   const movies = [
     {
+      id: "1",
       title: "Lord of the Mysteries",
       year: "2025",
       rating: 8.9,
@@ -12,6 +13,7 @@ export const MovieGrid = () => {
       description: "A mysterious tale of ancient powers and cosmic horrors in a steampunk world."
     },
     {
+      id: "2",
       title: "Dandadan",
       year: "2024",
       rating: 9.2,
@@ -21,6 +23,7 @@ export const MovieGrid = () => {
       description: "High school students encounter aliens and ghosts in this supernatural comedy."
     },
     {
+      id: "3",
       title: "The Missing Gun",
       year: "2002",
       rating: 7.5,
@@ -30,6 +33,7 @@ export const MovieGrid = () => {
       description: "A police officer's missing gun leads to a web of corruption and danger."
     },
     {
+      id: "4",
       title: "The Chosen",
       year: "2024",
       rating: 8.1,
@@ -39,6 +43,7 @@ export const MovieGrid = () => {
       description: "The life of Jesus Christ told through the eyes of those who knew him."
     },
     {
+      id: "5",
       title: "Chuhai no Osake",
       year: "2024",
       rating: 7.8,
@@ -48,6 +53,7 @@ export const MovieGrid = () => {
       description: "A heartwarming story about love, friendship, and finding yourself."
     },
     {
+      id: "6",
       title: "Code 8: Part II",
       year: "2024",
       rating: 8.3,
@@ -57,6 +63,7 @@ export const MovieGrid = () => {
       description: "In a world where superpowers are real, outcasts fight against oppression."
     },
     {
+      id: "7",
       title: "Fantastic Four",
       year: "2024",
       rating: 7.9,
@@ -66,6 +73,7 @@ export const MovieGrid = () => {
       description: "Marvel's First Family returns in this cosmic adventure."
     },
     {
+      id: "8",
       title: "Happy Gilmore 2",
       year: "2024",
       rating: 7.2,
@@ -75,6 +83,7 @@ export const MovieGrid = () => {
       description: "Happy returns to the golf course for another hilarious adventure."
     },
     {
+      id: "9",
       title: "Indiana Jones 5",
       year: "2024",
       rating: 8.0,
@@ -84,6 +93,7 @@ export const MovieGrid = () => {
       description: "The legendary archaeologist embarks on his final adventure."
     },
     {
+      id: "10",
       title: "Death Note: The Musical",
       year: "2024",
       rating: 8.7,
