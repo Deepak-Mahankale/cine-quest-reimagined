@@ -3,8 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
-export const Header = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+interface HeaderProps {
+  searchQuery?: string;
+  onSearchChange?: (query: string) => void;
+}
+
+export const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
+  const [localSearchQuery, setLocalSearchQuery] = useState("");
+  
+  const currentSearchQuery = searchQuery !== undefined ? searchQuery : localSearchQuery;
+  const handleSearchChange = onSearchChange || setLocalSearchQuery;
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
@@ -46,8 +54,8 @@ export const Header = () => {
               <Input
                 type="text"
                 placeholder="Search Movies or WEB-Series here..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={currentSearchQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 className="pl-10 w-80 bg-muted/50 border-border focus:border-primary"
               />
             </div>
