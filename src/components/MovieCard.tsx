@@ -1,7 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, Play, Star } from "lucide-react";
+import { Play, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface MovieCardProps {
@@ -43,19 +42,12 @@ export const MovieCard = ({ id = "1", title, year, rating, quality, genres, imag
           <span className="text-xs text-white font-medium">{rating}</span>
         </div>
         
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Button 
-            size="sm" 
-            variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-black"
-            onClick={(e) => {
-              e.stopPropagation();
-              // Handle download action
-            }}
-          >
-            <Download className="h-4 w-4" />
-          </Button>
+        {/* Hover Overlay - Click to view details */}
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="text-white text-center">
+            <Play className="h-8 w-8 mx-auto mb-2" />
+            <p className="text-sm font-medium">View Details</p>
+          </div>
         </div>
       </div>
       

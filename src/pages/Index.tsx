@@ -13,12 +13,13 @@ const Index = () => {
   const [selectedGenre, setSelectedGenre] = useState("All Genres");
   const [selectedYear, setSelectedYear] = useState("All Years");
   const [selectedQuality, setSelectedQuality] = useState("All Qualities");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       <ActionButtons />
-      <CategoryBadges />
+      <CategoryBadges onCategorySelect={setSelectedCategory} />
       <AlertBanner />
       <HeroSection />
       <FilterDropdowns 
@@ -34,6 +35,7 @@ const Index = () => {
         selectedGenre={selectedGenre}
         selectedYear={selectedYear}
         selectedQuality={selectedQuality}
+        selectedCategory={selectedCategory}
       />
       <Footer />
     </div>
