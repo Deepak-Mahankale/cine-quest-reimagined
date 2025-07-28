@@ -45,29 +45,17 @@ export const MovieCard = ({ id = "1", title, year, rating, quality, genres, imag
         
         {/* Hover Overlay */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="flex space-x-2">
-            <Button 
-              size="sm" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={(e) => {
-                e.stopPropagation();
-                // Handle play action
-              }}
-            >
-              <Play className="h-4 w-4" />
-            </Button>
-            <Button 
-              size="sm" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-black"
-              onClick={(e) => {
-                e.stopPropagation();
-                // Handle download action
-              }}
-            >
-              <Download className="h-4 w-4" />
-            </Button>
-          </div>
+          <Button 
+            size="sm" 
+            variant="outline" 
+            className="border-white text-white hover:bg-white hover:text-black"
+            onClick={(e) => {
+              e.stopPropagation();
+              // Handle download action
+            }}
+          >
+            <Download className="h-4 w-4" />
+          </Button>
         </div>
       </div>
       

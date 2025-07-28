@@ -329,22 +329,28 @@ const MovieDetails = () => {
                   We provide direct G-Drive download link for fast and secure downloading.
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                    <Play className="w-5 h-5 mr-2" />
-                    Watch Online
-                  </Button>
+                <div className="flex justify-center mb-6">
                   <Button size="lg" variant="outline">
                     <Download className="w-5 h-5 mr-2" />
                     Download Now
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 mt-4">
+                <div className="space-y-3">
+                  <h4 className="text-lg font-semibold text-center mb-4">Select Download Quality:</h4>
                   {movie.downloadSizes.map((size) => (
-                    <Button key={size} variant="secondary" size="sm">
-                      {size}
-                    </Button>
+                    <div key={size} className="flex flex-col items-center space-y-2">
+                      <p className="text-sm text-muted-foreground">
+                        {size === "480p" ? "Standard Quality - Smaller file size" :
+                         size === "720p" ? "HD Quality - Good balance of quality and size" :
+                         size === "1080p" ? "Full HD - High quality viewing experience" :
+                         size === "4K" ? "Ultra HD - Maximum quality for premium viewing" :
+                         `${size} Quality`}
+                      </p>
+                      <Button variant="secondary" size="lg" className="w-48">
+                        Download {size}
+                      </Button>
+                    </div>
                   ))}
                 </div>
               </div>
