@@ -25,14 +25,6 @@ const Index = () => {
       <ActionButtons />
       <CategoryBadges onCategorySelect={setSelectedCategory} />
       <AlertBanner />
-      <FilterDropdowns 
-        selectedGenre={selectedGenre}
-        selectedYear={selectedYear}
-        selectedQuality={selectedQuality}
-        onGenreChange={setSelectedGenre}
-        onYearChange={setSelectedYear}
-        onQualityChange={setSelectedQuality}
-      />
       <MovieGrid 
         searchQuery={searchQuery}
         selectedGenre={selectedGenre}

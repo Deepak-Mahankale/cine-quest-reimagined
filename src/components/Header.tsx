@@ -1,4 +1,10 @@
-import { Search, Menu } from "lucide-react";
+import { Search, Menu, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -68,15 +74,73 @@ export const Header = ({ searchQuery, onSearchChange, onCategorySelect }: Header
             >
               DUAL AUDIO
             </Button>
-            <Button variant="ghost" className="text-foreground hover:text-primary">
-              GENRE
-            </Button>
-            <Button variant="ghost" className="text-foreground hover:text-primary">
-              BY YEAR
-            </Button>
-            <Button variant="ghost" className="text-foreground hover:text-primary">
-              BY QUALITIES
-            </Button>
+            
+            {/* Genre Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-foreground hover:text-primary gap-1">
+                  GENRE
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 max-h-60 overflow-y-auto bg-background border-border z-50">
+                {["All Genres", "Action", "Adventure", "Animation", "Anime", "Biography", 
+                  "Comedy", "Crime", "Drama", "Fantasy", "Horror", "Musical", "Mystery", 
+                  "Romance", "Sci-Fi", "Sports", "Supernatural", "Thriller"].map((genre) => (
+                  <DropdownMenuItem
+                    key={genre}
+                    onClick={() => {/* Handle genre selection */}}
+                    className="cursor-pointer hover:bg-muted"
+                  >
+                    {genre}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Year Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-foreground hover:text-primary gap-1">
+                  BY YEAR
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 max-h-60 overflow-y-auto bg-background border-border z-50">
+                {["All Years", "2025", "2024", "2023", "2022", "2021", "2020", 
+                  "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", 
+                  "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2002"].map((year) => (
+                  <DropdownMenuItem
+                    key={year}
+                    onClick={() => {/* Handle year selection */}}
+                    className="cursor-pointer hover:bg-muted"
+                  >
+                    {year}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Quality Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-foreground hover:text-primary gap-1">
+                  BY QUALITIES
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 bg-background border-border z-50">
+                {["All Qualities", "4K", "1080P", "720P", "480P"].map((quality) => (
+                  <DropdownMenuItem
+                    key={quality}
+                    onClick={() => {/* Handle quality selection */}}
+                    className="cursor-pointer hover:bg-muted"
+                  >
+                    {quality}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* Search */}

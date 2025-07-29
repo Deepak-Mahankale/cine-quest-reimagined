@@ -25,7 +25,7 @@ export const MovieGrid = ({
   selectedCategory = ""
 }: MovieGridProps) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 12;
+  const moviesPerPage = 20;
 
   const movies = [
     { id: "1", title: "Lord of the Mysteries", year: "2025", rating: 8.9, quality: "1080P", genres: ["Fantasy", "Mystery", "Adventure"], imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop", description: "A mysterious tale of ancient powers and cosmic horrors in a steampunk world.", category: "Web Series", dualAudio: true },
@@ -126,7 +126,7 @@ export const MovieGrid = ({
         Latest Movies & Series
       </h2>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-4 mb-8">
         {currentMovies.map((movie, index) => (
           <MovieCard key={movie.id} {...movie} />
         ))}

@@ -337,22 +337,22 @@ const MovieDetails = () => {
                 <img 
                   src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=225&fit=crop" 
                   alt="Movie screenshot 1"
-                  className="w-full h-32 object-cover rounded-lg border"
+                  className="w-full h-48 object-cover rounded-lg border"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1487058792275-0ad44aaf24ca7?w=400&h=225&fit=crop" 
                   alt="Movie screenshot 2"
-                  className="w-full h-32 object-cover rounded-lg border"
+                  className="w-full h-48 object-cover rounded-lg border"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=225&fit=crop" 
                   alt="Movie screenshot 3"
-                  className="w-full h-32 object-cover rounded-lg border"
+                  className="w-full h-48 object-cover rounded-lg border"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=225&fit=crop" 
                   alt="Movie screenshot 4"
-                  className="w-full h-32 object-cover rounded-lg border"
+                  className="w-full h-48 object-cover rounded-lg border"
                 />
               </div>
             </div>
