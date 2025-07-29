@@ -5,13 +5,7 @@ interface CategoryBadgesProps {
 }
 
 export const CategoryBadges = ({ onCategorySelect }: CategoryBadgesProps) => {
-  const qualityBadges = [
-    { label: "480P", color: "bg-red-600 hover:bg-red-700" },
-    { label: "720P", color: "bg-orange-600 hover:bg-orange-700" },
-    { label: "1080P", color: "bg-blue-600 hover:bg-blue-700" },
-    { label: "1080P [60FPS]", color: "bg-purple-600 hover:bg-purple-700" },
-    { label: "2160P 4K", color: "bg-pink-600 hover:bg-pink-700" },
-  ];
+  const qualityBadges = [];
 
   const genreBadges = [
     { label: "ANIME", color: "bg-cyan-600 hover:bg-cyan-700" },

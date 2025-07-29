@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -186,12 +187,21 @@ const getMovieById = (id: string) => {
 const MovieDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
   const movie = getMovieById(id || "1");
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    navigate("/");
+  };
 
   if (!movie) {
     return (
       <div className="min-h-screen bg-background">
-        <Header />
+        <Header 
+          searchQuery={searchQuery} 
+          onSearchChange={handleSearch}
+        />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">Movie Not Found</h1>
@@ -207,7 +217,10 @@ const MovieDetails = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Header />
+      <Header 
+        searchQuery={searchQuery} 
+        onSearchChange={handleSearch}
+      />
       
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb */}

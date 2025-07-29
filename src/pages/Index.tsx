@@ -17,11 +17,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+      <Header 
+        searchQuery={searchQuery} 
+        onSearchChange={setSearchQuery}
+        onCategorySelect={setSelectedCategory}
+      />
       <ActionButtons />
       <CategoryBadges onCategorySelect={setSelectedCategory} />
       <AlertBanner />
-      <HeroSection />
       <FilterDropdowns 
         selectedGenre={selectedGenre}
         selectedYear={selectedYear}
