@@ -64,6 +64,15 @@ export const Header = ({ searchQuery, onSearchChange, onCategorySelect, onGenreS
                 if (onCategorySelect) {
                   onCategorySelect("");
                 }
+                if (onGenreSelect) {
+                  onGenreSelect("All Genres");
+                }
+                if (onYearSelect) {
+                  onYearSelect("All Years");
+                }
+                if (onQualitySelect) {
+                  onQualitySelect("All Qualities");
+                }
               }}
             >
               HOME
