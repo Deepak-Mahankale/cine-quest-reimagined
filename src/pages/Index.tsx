@@ -21,6 +21,9 @@ const Index = () => {
         searchQuery={searchQuery} 
         onSearchChange={setSearchQuery}
         onCategorySelect={setSelectedCategory}
+        onGenreSelect={setSelectedGenre}
+        onYearSelect={setSelectedYear}
+        onQualitySelect={setSelectedQuality}
       />
       <ActionButtons />
       <CategoryBadges onCategorySelect={setSelectedCategory} />

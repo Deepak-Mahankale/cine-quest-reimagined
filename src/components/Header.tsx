@@ -14,9 +14,12 @@ interface HeaderProps {
   searchQuery?: string;
   onSearchChange?: (query: string) => void;
   onCategorySelect?: (category: string) => void;
+  onGenreSelect?: (genre: string) => void;
+  onYearSelect?: (year: string) => void;
+  onQualitySelect?: (quality: string) => void;
 }
 
-export const Header = ({ searchQuery, onSearchChange, onCategorySelect }: HeaderProps) => {
+export const Header = ({ searchQuery, onSearchChange, onCategorySelect, onGenreSelect, onYearSelect, onQualitySelect }: HeaderProps) => {
   const [localSearchQuery, setLocalSearchQuery] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -89,7 +92,14 @@ export const Header = ({ searchQuery, onSearchChange, onCategorySelect }: Header
                   "Romance", "Sci-Fi", "Sports", "Supernatural", "Thriller"].map((genre) => (
                   <DropdownMenuItem
                     key={genre}
-                    onClick={() => {/* Handle genre selection */}}
+                    onClick={() => {
+                      if (location.pathname !== "/") {
+                        navigate("/");
+                      }
+                      if (onGenreSelect) {
+                        onGenreSelect(genre);
+                      }
+                    }}
                     className="cursor-pointer hover:bg-muted"
                   >
                     {genre}
@@ -112,7 +122,14 @@ export const Header = ({ searchQuery, onSearchChange, onCategorySelect }: Header
                   "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2002"].map((year) => (
                   <DropdownMenuItem
                     key={year}
-                    onClick={() => {/* Handle year selection */}}
+                    onClick={() => {
+                      if (location.pathname !== "/") {
+                        navigate("/");
+                      }
+                      if (onYearSelect) {
+                        onYearSelect(year);
+                      }
+                    }}
                     className="cursor-pointer hover:bg-muted"
                   >
                     {year}
@@ -133,7 +150,14 @@ export const Header = ({ searchQuery, onSearchChange, onCategorySelect }: Header
                 {["All Qualities", "4K", "1080P", "720P", "480P"].map((quality) => (
                   <DropdownMenuItem
                     key={quality}
-                    onClick={() => {/* Handle quality selection */}}
+                    onClick={() => {
+                      if (location.pathname !== "/") {
+                        navigate("/");
+                      }
+                      if (onQualitySelect) {
+                        onQualitySelect(quality);
+                      }
+                    }}
                     className="cursor-pointer hover:bg-muted"
                   >
                     {quality}

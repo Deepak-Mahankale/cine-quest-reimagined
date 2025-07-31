@@ -2,8 +2,8 @@ import { Separator } from "@/components/ui/separator";
 
 export const Footer = () => {
   const footerLinks = [
-    { label: "Contact Us", href: "#" },
-    { label: "Request Us", href: "#" },
+    { label: "Contact Us", href: "/contact-us" },
+    { label: "Request Us", href: "/request-us" },
     { label: "DCMA", href: "#" },
     { label: "About Us", href: "#" }
   ];
