@@ -59,7 +59,12 @@ export const Header = ({ searchQuery, onSearchChange, onCategorySelect, onGenreS
             <Button 
               variant="ghost" 
               className="text-foreground hover:text-primary"
-              onClick={() => handleNavigation("")}
+              onClick={() => {
+                navigate("/");
+                if (onCategorySelect) {
+                  onCategorySelect("");
+                }
+              }}
             >
               HOME
             </Button>
