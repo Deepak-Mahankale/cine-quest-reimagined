@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 
 interface Comment {
@@ -73,8 +71,6 @@ const RequestUs = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <Card className="mb-8">
@@ -136,8 +132,6 @@ const RequestUs = () => {
           </Card>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
