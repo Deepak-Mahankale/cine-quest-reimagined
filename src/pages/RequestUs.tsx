@@ -4,6 +4,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { Header } from "@/components/Header";
+import { ActionButtons } from "@/components/ActionButtons";
+import { CategoryBadges } from "@/components/CategoryBadges";
+import { AlertBanner } from "@/components/AlertBanner";
+import { HeroSection } from "@/components/HeroSection";
+import { Footer } from "@/components/Footer";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface Comment {
   id: number;
@@ -31,6 +39,7 @@ const RequestUs = () => {
     }
   ]);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,8 +80,25 @@ const RequestUs = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Header />
+      <ActionButtons />
+      <CategoryBadges onCategorySelect={() => {}} />
+      <AlertBanner />
+      <HeroSection />
+      
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate("/")}
+              className="flex items-center gap-2 text-foreground hover:text-primary"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </div>
+          
           <Card className="mb-8">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-bold">Request Us</CardTitle>
@@ -132,6 +158,8 @@ const RequestUs = () => {
           </Card>
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 };
