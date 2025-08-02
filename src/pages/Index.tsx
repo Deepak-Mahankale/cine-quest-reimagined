@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { ActionButtons } from "@/components/ActionButtons";
 import { CategoryBadges } from "@/components/CategoryBadges";
 import { AlertBanner } from "@/components/AlertBanner";
-import { HeroSection } from "@/components/HeroSection";
+
 import { MovieGrid } from "@/components/MovieGrid";
 import { FilterDropdowns } from "@/components/FilterDropdowns";
 import { Footer } from "@/components/Footer";

@@ -8,7 +8,7 @@ import { Header } from "@/components/Header";
 import { ActionButtons } from "@/components/ActionButtons";
 import { CategoryBadges } from "@/components/CategoryBadges";
 import { AlertBanner } from "@/components/AlertBanner";
-import { HeroSection } from "@/components/HeroSection";
+
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -84,7 +84,7 @@ const RequestUs = () => {
       <ActionButtons />
       <CategoryBadges onCategorySelect={() => {}} />
       <AlertBanner />
-      <HeroSection />
+      
       
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
